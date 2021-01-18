@@ -2,8 +2,11 @@ import React from 'react'
 import { View, StyleSheet, Text } from 'react-native';
 import { Button, Paragraph, useTheme } from 'react-native-paper';
 
+import { useHistory } from 'react-router-native';
+
 export default function Result() {
   const { text } = useTheme();
+  const history = useHistory();
 
   return (
     <View
@@ -40,7 +43,7 @@ export default function Result() {
         </Text>
       </View>
       <Button
-        onPress={() => {}}
+        onPress={() => history.push('/careers')}
         contentStyle={styles.button}
         style={styles.darkButton}
         mode="contained"

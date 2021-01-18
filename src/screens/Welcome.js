@@ -9,8 +9,11 @@ import {
   useTheme,
 } from 'react-native-paper';
 
+import { useHistory } from 'react-router-native';
+
 export default function Welcome() {
   const { colors } = useTheme();
+  const history = useHistory();
 
   return (
     <View
@@ -55,7 +58,7 @@ export default function Welcome() {
         Deixar para depois
       </Button>
       <Button
-        onPress={() => {}}
+        onPress={() => history.push('/vocational')}
         contentStyle={[styles.button]}
         style={styles.darkButton}
         mode="contained"

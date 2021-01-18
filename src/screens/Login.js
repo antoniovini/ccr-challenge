@@ -8,6 +8,8 @@ import {
   Text
 } from 'react-native-paper';
 
+import { useHistory } from 'react-router-native';
+
 const initialFieldValues = {
   email: "",
   password: ""
@@ -15,6 +17,7 @@ const initialFieldValues = {
 
 export default function Login() {
   const [fields, setFields] = useState(initialFieldValues);
+  const history = useHistory();
 
   const onChangeText = (field, text) => {
     setFields(old => ({[field]: text, ...old}));
@@ -51,7 +54,7 @@ export default function Login() {
         contentStyle={styles.buttonContent}
         style={styles.button}
         mode="contained"
-        onPress={() => {}}
+        onPress={() => history.push('/welcome')}
       >
         Entrar
       </Button>

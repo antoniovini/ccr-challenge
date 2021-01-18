@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { View, StyleSheet, Text, TouchableHighlight } from 'react-native';
 import { Button, useTheme } from 'react-native-paper';
 
+import { useHistory } from 'react-router-native';
+
 export default function Vocational() {
   const [questions, setQuestions] = useState([
     { title: "Costumo ver imagens claras quando fecho meus olhos" },
@@ -11,13 +13,15 @@ export default function Vocational() {
 
   const { colors, text } = useTheme();
 
+  const history = useHistory();
+
   const onPress = () => {
     setOption(null);
 
     if(questions.length > curr){
       setCurr(curr + 1);
     }else{
-      // finish here
+      history.push('/result');
     }
   }
 

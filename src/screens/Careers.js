@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { View, FlatList, StyleSheet, Dimensions } from 'react-native';
 import { Button, Title } from 'react-native-paper';
 
+import { useHistory } from 'react-router-native';
+
 export default function Careers() {
   const [careers, setCareers] = useState([
     { id: 0, text: "Arquitetura"},
@@ -13,6 +15,8 @@ export default function Careers() {
     { id: 5, text: "Engenharia"},
     { id: 5, text: "Cirurgia"},
   ]);
+
+  const history = useHistory();
 
   const createRows = (data, columns) => {
     const rows = Math.floor(data.length / columns);
@@ -55,7 +59,7 @@ export default function Careers() {
 
       </FlatList>
       <Button
-        onPress={() => {}}
+        onPress={() => history.push('/premium')}
         contentStyle={styles.button}
         style={styles.darkButton}
         mode="contained"

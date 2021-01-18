@@ -2,8 +2,11 @@ import React from 'react'
 import { View, Text, StyleSheet } from 'react-native';
 import { Button, Paragraph, Title, useTheme } from 'react-native-paper';
 
+import { useHistory } from 'react-router-native';
+
 export default function Premium() {
   const { colors, text } = useTheme();
+  const history = useHistory();
 
   return (
     <View
@@ -59,7 +62,7 @@ export default function Premium() {
         Continuar com plano gratuito
       </Button>
       <Button
-        onPress={() => {}}
+        onPress={() => history.push('/home')}
         contentStyle={styles.button}
         style={styles.darkButton}
         mode="contained"
