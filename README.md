@@ -1,5 +1,4 @@
-# CCR CHALLENGE APP
-
+# Hacka CCR 2021 - Time 53 - Projeto Trilha
 ## Instalação
 
 Clone o projeto, instale todas as dependências e inicie o app.<br>
